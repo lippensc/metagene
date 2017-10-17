@@ -280,11 +280,11 @@ write_bed_file_filter_result <- function(bed_file_filter_result,
 avoid_gaps_update <- function(table, bam_name, gaps_threshold = 0){
     new_table <- data.table::copy(table)
     
-	if (!is.null(new_table$bin)){
-		bin_count <- max(unique(new_table$bin))
-	} else {
-		bin_count <- NULL
-	}
+    if (!is.null(new_table$bin)){
+        bin_count <- max(unique(new_table$bin))
+    } else {
+        bin_count <- NULL
+    }
             
     #how_namy_by_exon_by_design
     nb_nuc_removed <- new_table[value <= gaps_threshold 
@@ -330,8 +330,8 @@ avoid_gaps_update <- function(table, bam_name, gaps_threshold = 0){
         #replace former regionsize
         new_regionstartnuc <- (original_regionstartnuc
                             - nb_nuc_removed_by_gene$V1[i])
-		new_regionstartnuc <- replace(new_regionstartnuc, 
-								which(new_regionstartnuc < 1), 1)
+        new_regionstartnuc <- replace(new_regionstartnuc, 
+                                which(new_regionstartnuc < 1), 1)
         new_table$regionstartnuc[selected] <- new_regionstartnuc
     }
     
