@@ -336,7 +336,7 @@ mg$produce_table(design = mydesign,
                         flip_regions = TRUE, 
                         normalization = 'RPM')
 tab <- mg$get_table()
-tab0 <- avoid_gaps_update(tab, 
+tab0 <- metagene:::avoid_gaps_update(tab, 
         bam_name = 'c_al4_945MLM_demo_sorted', gaps_threshold = 10)
 tab0 <- tab0[which(tab0$region == "ENCFF355RXX_SLC25A5"),]
 tab1 <- tab0[which(tab0$design == "cyto"),]
@@ -426,7 +426,7 @@ mg$produce_table(design = mydesign,
 tab <- mg$get_table()
 
 #remove values under 30
-tabr <- avoid_gaps_update(tab, 
+tabr <- metagene:::avoid_gaps_update(tab, 
         bam_name = 'c_al4_945MLM_demo_sorted', 
         gaps_threshold = 30)
 
