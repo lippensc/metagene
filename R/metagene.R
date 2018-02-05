@@ -368,8 +368,8 @@ metagene <- R6Class("metagene",
             count <- private$bam_handler$get_aligned_count(filename)
                 weight <- 1 / (count / 1000000)
                 coverages[[filename]] <- coverages[[filename]] * weight
-        }
-        coverages <- self$get_raw_coverages(filenames)
+            }
+            coverages <- self$get_raw_coverages(filenames)
             coverage_names <- names(coverages)
             coverages <-
                 private$parallel_job$launch_job(data = coverage_names,

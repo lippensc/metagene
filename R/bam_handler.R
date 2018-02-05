@@ -337,7 +337,6 @@ Bam_Handler <- R6Class("Bam_Handler",
                                     param = ScanBamParam(which = x);
                                     countBam(bam_file, param = param)$records;
                                 }))
-
         },
         prepare_regions = function(regions, bam_file, force_seqlevels) {
             # The regions must be a GRanges object
